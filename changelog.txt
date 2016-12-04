@@ -1,0 +1,28 @@
+
+04.12.2016 v0.02
+
+	- upload do repozytorium github
+	- dzia³a dla systemu Windows x64 (na chwilê obecn¹)
+	Zawiera:
+	- podstawowe GUI z ³atw¹ rozbudow¹ o kolejne elementy i funkcje
+	- wbudowana konsola pomagaj¹ca œledziæ komunikacjê i pracê programu	
+	- obs³uga komunikacji po RS232
+	- zaimplementowane funkcje wysy³ania i oczekiwania na komunikaty
+	- komunikaty rozró¿niane wg typu wiadomoœci  
+	- przygotowany pod wspó³pracê z ró¿nymi sterownikami poprzez interfejs Protocol
+	- podstawowa implementacja dla sterownika Expert96
+	- biblioteki do komunikacji po RS232
+	
+	GUI:
+	- wybór serwisanta. Do rozbudowy dodawanie i kasowanie tej listy z pliku
+	- wybór daty przeprowadzania serwisu
+	- wybór portu COM do komunikacji
+	- Wybór czytnika do serwisu (obecnie tylko Expert96 dzia³aj¹cy)
+	- pokazywanie i ukrywanie paska "status" na dole aplikacji
+	- pokazywanie i ukrywanie menu serwisowego
+	- pokazywanie i ukrywanie konsoli
+	- konsola podzielona na strumieñ wyjœciowy i wejœciowy, wiadomoœci normalne i b³êdy
+	
+	- plik Ant build.xml do szybkiej kompilacji i testowania
+	- spakowane archiwum .jar
+	- pliki source i binarne
