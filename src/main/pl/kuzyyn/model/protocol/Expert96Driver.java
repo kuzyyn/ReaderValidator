@@ -10,14 +10,13 @@ import java.util.regex.Pattern;
 import gnu.io.SerialPort;
 import gnu.io.UnsupportedCommOperationException;
 import main.pl.kuzyyn.controller.communication.RSController;
-import main.pl.kuzyyn.model.serial.Protocol;
 
 public class Expert96Driver  {
 	
-	private static final int baudRate = 19200;
-	private static final int parity = SerialPort.PARITY_EVEN;
-	private static final int bits =SerialPort.DATABITS_7;
-	private static final int stopBit = SerialPort.STOPBITS_2;
+	private static final int BAUDRATE = 19200;
+	private static final int PARITY = SerialPort.PARITY_EVEN;
+	private static final int BITS =SerialPort.DATABITS_7;
+	private static final int STOPBIT = SerialPort.STOPBITS_2;
 	
 	private final static char NUL = (char)0; // null message
 	private final static char STX = (char)2; // Start of text
@@ -28,21 +27,16 @@ public class Expert96Driver  {
 	private final static char NAK = (char)21; // negative acknowledge to the sender
 	private final static char endLine=ACK; //
 
-	private static String readerState;
-	private RSController controller;
 	private LinkedHashMap<String,String> messagesMap;
-	private int messagesToRead = 0;
-	private boolean youGotNewMessage = false;
 	static boolean stopWaiting = false;
 	
 	public Expert96Driver(RSController rsController) {
-		this.controller = rsController;
 		messagesMap = new LinkedHashMap<String,String>();
 	}
 	
 	public SerialPort setSerialPortParams(SerialPort serialPort) {
 		try {
-			serialPort.setSerialPortParams(baudRate,bits,stopBit,parity);
+			serialPort.setSerialPortParams(BAUDRATE,BITS,STOPBIT,PARITY);
 		} catch (UnsupportedCommOperationException e) {
 
 			e.printStackTrace();
@@ -162,8 +156,6 @@ public class Expert96Driver  {
 		if (previousMessage!=null){
 			ConsoleLogger.outErrorLog("Nadpisano klucz "+messageType+", poprzednia wartoœæ: " + getASCII(previousMessage) +", nowa wartoœæ: " + getASCII(lastMessage));
 		} else{
-			messagesToRead++;
-			youGotNewMessage = true;
 			
 		}
 		System.out.println("Odczytano: "+lastMessage + ", Ascii: "+getASCII(lastMessage)+ ", Typ: " +messageType );

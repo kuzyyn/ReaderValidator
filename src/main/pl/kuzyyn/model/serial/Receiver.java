@@ -9,10 +9,8 @@ import main.pl.kuzyyn.controller.communication.RSController;
 
 public class Receiver implements SerialPortEventListener {
 InputStream in;
-private String lastMessage="";
 	public Receiver(InputStream in) {
 		this.in = in;
-
 	}
 
 	public void onReceive(byte b) {

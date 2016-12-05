@@ -22,7 +22,6 @@ public class RSController  {
 	private ExecutorService coordinatorPool;
 
 	private RSController(){};
-	private String ack,nak;
 	private Messaging messagesTask;
 	Protocol protocol;
 	

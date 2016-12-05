@@ -22,6 +22,7 @@
 				<include name="**/*.dll" />
 			</fileset>
 		</copy>
+
 	</target>
 	<target name="clean" description="clean output">
 		<delete failonerror="false">
@@ -52,16 +53,11 @@
 	</target>
 
 	<target name="build-tests" depends="build" description="Compile test files...">
-		<copy todir="${build.dir}/main/pl/kuzyyn">
-			<fileset dir="${basedir}/lib">
-				<include name="**/*.dll" />
-			</fileset>
-		</copy>
+
 		<javac destdir="${build.dir}" srcdir="${src.dir}" source="1.8" target="1.8" debug="true" deprecation="false" optimize="false" failonerror="true" includeantruntime="true">
 			<classpath refid="library-classpath" />
 			<classpath path="${class.dir}" />
 			<include name="test/**" />
-
 		</javac>
 	</target>
 
@@ -69,12 +65,13 @@
 		<junit>
 			<classpath refid="library-classpath" />
 			<classpath path="${build.dir}" />
-			<sysproperty key="java.library.path" path="${basedir}/lib" />
+
 			<batchtest>
 				<fileset dir="${build.dir}">
 					<include name="test/**/*Test*" />
 				</fileset>
 			</batchtest>
+			<sysproperty key="java.library.path" path="${build.dir}/lib" />
 			<formatter type="brief" usefile="false" />
 		</junit>
 
@@ -99,6 +96,4 @@
 
 	</target>
 
-
-	<!-- java -jar -debug ReaderValidator.jar       -->
 </project>

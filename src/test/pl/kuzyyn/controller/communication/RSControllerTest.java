@@ -44,7 +44,7 @@ public class RSControllerTest {
 	@Test
 	public void shouldEstablishConnection(){
 		RSController.getInstance().connect("COM3","Expert96");
-		TreeMap messageMap = RSController.getInstance().getProtocol().getEstablishmentMessage();
+		TreeMap<String, String> messageMap = RSController.getInstance().getProtocol().getEstablishmentMessage();
 		assertTrue(messageMap.containsKey("MESSAGE"));
 		assertTrue(messageMap.containsKey("ACK"));
 		assertTrue(messageMap.containsKey("NAK"));

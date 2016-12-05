@@ -26,7 +26,7 @@ public class UpdateUpperContentLabels implements GUIUpdateCommand {
 				System.out.println("Problem z aktualizowaniem daty");
 			}
 			contentPanel.setCurrentDate(calendar);
-			setDateTime(valDate,calendar);
+			updateDateLabelContent(valDate,calendar);
 	}
 		if(values.containsKey("OPERATOR")){
 			String operator = (String)values.get("OPERATOR");
@@ -35,12 +35,6 @@ public class UpdateUpperContentLabels implements GUIUpdateCommand {
 		}
 	}
 
-	private void setDateTime(JLabel valDate, Calendar calendar) {
-		String year,month,day;
-		
-		
-		
-	}
 	private void updateDateLabelContent(JLabel valDate, Calendar calendar){
 		String dateTime = getStringFormatDateTime(calendar);
 		valDate.setText(dateTime);

@@ -5,11 +5,7 @@ import java.util.TreeMap;
 import javax.swing.JOptionPane;
 
 import main.pl.kuzyyn.controller.communication.RSController;
-import main.pl.kuzyyn.model.protocol.ConsoleLogger;
-import main.pl.kuzyyn.model.protocol.Expert96Driver;
-import main.pl.kuzyyn.model.serial.Protocol;
 import main.pl.kuzyyn.model.serial.ReaderConnect;
-import main.pl.kuzyyn.model.serial.Sender;
 import main.pl.kuzyyn.view.components.ConnectionSetupDialog;
 
 public class ShowConnectionSetupDialog implements GUICommand {

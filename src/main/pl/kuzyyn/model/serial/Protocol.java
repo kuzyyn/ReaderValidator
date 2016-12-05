@@ -17,7 +17,7 @@ public interface Protocol {
 	void decodeMessage(String lastMessage);
 	void onMessage(byte b);
 	boolean initialize();
-	public TreeMap getEstablishmentMessage();
+	public TreeMap<String, String> getEstablishmentMessage();
 	public String lookForMessageAndRemove(String messageType, String negativeAnswer);
 
 }

@@ -12,8 +12,6 @@ import main.pl.kuzyyn.controller.communication.RSController;
 
 public class Messaging implements Callable<String>{
 	private String ack,nak;
-	private int timeout;
-
 	@Override
 	public String call() throws Exception {
 		String message;

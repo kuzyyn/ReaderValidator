@@ -15,22 +15,22 @@ public class D_Expert96 implements Protocol {
 		messagesMap = new TreeMap<String,String>();
 	}
 	
-	private static final int baudRate = 19200;
-	private static final int parity = 2; //SerialPort.PARITY_EVEN;
-	private static final int bits = 7; //SerialPort.DATABITS_7;
-	private static final int stopBit = 2 ; // SerialPort.STOPBITS_2;
+	private static final int BAUDRATE = 19200;
+	private static final int PARITY = 2; //SerialPort.PARITY_EVEN;
+	private static final int BITS = 7; //SerialPort.DATABITS_7;
+	private static final int STOPBIT = 2 ; // SerialPort.STOPBITS_2;
 	
 	public int getBaudRate(){
-		return baudRate;
+		return BAUDRATE;
 	}
 	public int getParity(){
-		return parity;
+		return PARITY;
 	}
 	public int getBits(){
-		return bits;
+		return BITS;
 	}
 	public int getStopBit(){
-		return stopBit;
+		return STOPBIT;
 	}
 	private final static char NUL = (char)0; // null message
 	private final static char STX = (char)2; // Start of text
